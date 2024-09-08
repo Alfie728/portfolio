@@ -96,6 +96,10 @@ export const projectsData = [
         name: "Clerk",
         description: "For authentication and user management",
       },
+      {
+        name: "OpenAI API",
+        description: "AI assistant for generating responses to questions",
+      },
     ],
     stackExplanation:
       "This stack was chosen for its scalability, performance, and developer experience. Next.js and React provide a powerful frontend framework, while MongoDB offers flexibility for our data models. TypeScript enhances code quality and maintainability.",
@@ -116,7 +120,7 @@ export const projectsData = [
     title: "Career Canvas",
     description:
       "A free, open-source website that helps people create ATS-friendly resume that with ease.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+    tags: ["React", "TypeScript", "Next.js", "Tailwind" ],
     imageUrl: careerCanvasImg,
     githubUrl: "https://github.com/Alfie728/Career-Canvas",
     deployedUrl: "https://careercanvas-mu.vercel.app/",
