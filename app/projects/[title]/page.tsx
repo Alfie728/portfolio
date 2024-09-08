@@ -56,31 +56,31 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
   }
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen  dark:text-white">
       <main className="container mx-auto px-4 py-8 max-w-4xl">
         <MorphingButton />
         <FadeInSection>
-          <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-          <p className="text-lg text-gray-600 mb-6">{project.description}</p>
+          <h1 className="text-4xl font-bold mb-4 dark:text-white">{project.title}</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">{project.description}</p>
         </FadeInSection>
 
         <FadeInSection>
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div>
-              <h3 className="font-semibold mb-2">Type</h3>
-              <p className="text-gray-600">{project.type}</p>
+              <h3 className="font-semibold mb-2 dark:text-white">Type</h3>
+              <p className="text-gray-600 dark:text-gray-300">{project.type}</p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Timeline</h3>
-              <p className="text-gray-600">{project.timeline}</p>
+              <h3 className="font-semibold mb-2 dark:text-white">Timeline</h3>
+              <p className="text-gray-600 dark:text-gray-300">{project.timeline}</p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Role</h3>
-              <p className="text-gray-600">{project.role}</p>
+              <h3 className="font-semibold mb-2 dark:text-white">Role</h3>
+              <p className="text-gray-600 dark:text-gray-300">{project.role}</p>
             </div>
             <div>
-              <h3 className="font-semibold mb-2">Team Size</h3>
-              <p className="text-gray-600">{project.teamSize}</p>
+              <h3 className="font-semibold mb-2 dark:text-white">Team Size</h3>
+              <p className="text-gray-600 dark:text-gray-300">{project.teamSize}</p>
             </div>
           </div>
         </FadeInSection>
@@ -97,43 +97,43 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
 
         <FadeInSection>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">
               Project Purpose and Goal
             </h2>
-            <p className="text-gray-600 mb-4">{project.purpose}</p>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">{project.purpose}</p>
           </section>
         </FadeInSection>
 
         <FadeInSection>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">
               Web Stack and Explanation
             </h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
+            <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 mb-4">
               {project.stack.map((item, index) => (
                 <li key={index}>
                   {item.name}: {item.description}
                 </li>
               ))}
             </ul>
-            <p className="text-gray-600">{project.stackExplanation}</p>
+            <p className="text-gray-600 dark:text-gray-300">{project.stackExplanation}</p>
           </section>
         </FadeInSection>
 
         <FadeInSection>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Development Process</h2>
-            <p className="text-gray-600">{project.developmentProcess}</p>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">Development Process</h2>
+            <p className="text-gray-600 dark:text-gray-300">{project.developmentProcess}</p>
           </section>
         </FadeInSection>
 
         <FadeInSection>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">
               Problems and Thought Process
             </h2>
             {project.challenges.map((challenge, index) => (
-              <p key={index} className="text-gray-600 mb-4">
+              <p key={index} className="text-gray-600 dark:text-gray-300 mb-4">
                 {challenge}
               </p>
             ))}
@@ -142,8 +142,8 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
 
         <FadeInSection>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Lessons Learned</h2>
-            <ul className="list-disc list-inside space-y-2 text-gray-600">
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">Lessons Learned</h2>
+            <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
               {project.lessonsLearned.map((lesson, index) => (
                 <li key={index}>{lesson}</li>
               ))}
@@ -153,7 +153,7 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
 
         <FadeInSection>
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Let's Build Something Together</h2>
+            <h2 className="text-2xl font-bold mb-4 dark:text-white">Let's Build Something Together</h2>
             <p className="text-gray-700 mt-6 dark:text-white/80">
               Please contact me directly at{" "}
               <a className="underline" href="mailto:zegro728@gmail.com">
