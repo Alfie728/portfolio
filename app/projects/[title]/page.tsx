@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowLeft, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
@@ -8,12 +8,12 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { projectsData } from "@/lib/data";
 import { notFound } from "next/navigation";
-
+import MorphingButton from "@/components/MorphingButton";
 const FadeInSection = ({ children }: { children: React.ReactNode }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.3,
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const FadeInSection = ({ children }: { children: React.ReactNode }) => {
       transition={{ duration: 0.5 }}
       variants={{
         visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 40 },
       }}
     >
       {children}
@@ -43,6 +43,10 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
     (project) => project.title === decodeURIComponent(params.title)
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!project) {
     notFound();
   }
@@ -50,14 +54,7 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
   return (
     <div className="min-h-screen ">
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <Link
-          href="/#projects"
-          className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 mb-6"
-        >
-          <FaArrowLeft className="w-4 h-4 mr-2" />
-          Back to Projects
-        </Link>
-
+        <MorphingButton />
         <FadeInSection>
           <h1 className="text-4xl font-bold mb-4">Web Overflow</h1>
           <p className="text-lg text-gray-600 mb-6">
@@ -82,14 +79,14 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
             </div>
             <div>
               <h3 className="font-semibold mb-2">Team Size</h3>
-              <p className="text-gray-600">3 members</p>
+              <p className="text-gray-600">1 member</p>
             </div>
           </div>
         </FadeInSection>
 
         <FadeInSection>
           <Image
-            src="/placeholder.svg"
+            src="/web_overflow.png"
             alt="Web Overflow Project Screenshot"
             width={1200}
             height={675}
@@ -119,9 +116,6 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
             </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-600 mb-4">
               <li>
-                React: For building a dynamic and responsive user interface
-              </li>
-              <li>
                 Next.js: To enable server-side rendering and optimize
                 performance
               </li>
@@ -132,6 +126,7 @@ export default function ProjectPage({ params }: { params: { title: string } }) {
               <li>
                 Tailwind CSS: For rapid UI development and consistent styling
               </li>
+              <li>Clerk: For authentication and user management</li>
             </ul>
             <p className="text-gray-600">
               This stack was chosen for its scalability, performance, and
