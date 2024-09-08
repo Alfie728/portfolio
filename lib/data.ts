@@ -67,6 +67,8 @@ export const projectsData = [
       "Built a platform for developers to ask questions, share knowledge, and interact with a community of peers.",
     tags: ["React", "TypeScript", "Next.js", "MongoDB", "Tailwind"],
     imageUrl: webOverflowImg,
+    githubUrl: "https://github.com/Alfie728/weboverflow",
+    deployedUrl: "https://weboverflow-alfiechen.vercel.app",
   },
   {
     title: "Career Canvas",
@@ -74,6 +76,8 @@ export const projectsData = [
       "A free, open-source website that helps people create ATS-friendly resume that with ease.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
     imageUrl: careerCanvasImg,
+    githubUrl: "https://github.com/Alfie728/Career-Canvas",
+    deployedUrl: "https://careercanvas-mu.vercel.app/",
   },
 ] as const;
 

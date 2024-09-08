@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -12,6 +13,8 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  githubUrl,
+  deployedUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -46,6 +49,30 @@ export default function Project({
               </li>
             ))}
           </ul>
+          <div className="flex mt-4 gap-2">
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-gray-700 px-3 py-2 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+              >
+                <FaGithub />
+                GitHub
+              </a>
+            )}
+            {deployedUrl && (
+              <a
+                href={deployedUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-gray-700 px-3 py-2 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+              >
+                <FaExternalLinkAlt />
+                Live Demo
+              </a>
+            )}
+          </div>
         </div>
 
         <Image
